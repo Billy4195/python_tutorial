@@ -10,10 +10,8 @@ levelContainer.append({'levelNum':6,'name':'If elif else Statement'})
 levelContainer.append({'levelNum':7,'name':'While loop'})
 levelContainer.append({'levelNum':8,'name':'For loop'})
 levelContainer.append({'levelNum':9,'name':'Function'})
-print(json.dumps(levelContainer))
 try:
     with open('levels.txt','w') as levelFile:
         levelFile.write(json.dumps(levelContainer))
 except IOError:
     print("File open error: can't not open levels.txt")
-os.system("pause")

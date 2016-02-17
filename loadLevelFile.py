@@ -1,3 +1,4 @@
+#load levels from file and transform to class
 import json
 from level import level
 def loadLevelFile():

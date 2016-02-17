@@ -7,21 +7,29 @@ from loadLevelFile import loadLevelFile
 #introdution page 
 def main():
     setcolor("8F")
-    introduction_page()
+    introductionPage()
     levelContainer = loadLevelFile()
-    print(levelContainer)
+    clearScreen()
+    levelPage(levelContainer)
     os.system("pause")
 
 def setcolor(color):
     os.system("color "+color)
 
-def introduction_page():
+def clearScreen():
+    os.system('cls')
+    
+def introductionPage():
     print("Hello~\n")
     print("This is a program help you learn python\n")
     print("Enjoy it!  ˊˇˋ\n")
     os.system("pause")
 
+def levelPage(levelContainer):
+    print("=============================Level Page=============================")
+    for level in levelContainer:
+        print("Level {0} ------ {1}".format(level.levelNum,level.levelName))
 
-    
+
 
 main()

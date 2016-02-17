@@ -1,3 +1,4 @@
+#reset Level File to clear all the record
 import json
 levelContainer = []
 levelContainer.append({'levelNum':1,'levelName':'Variables'})

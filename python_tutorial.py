@@ -47,6 +47,8 @@ def selectLevel(levelContainer):
                 state = EXCEED_MAXIMUM_NUMBER
                 clearScreen()
                 continue
+            else:
+                return command
         except ValueError:
             state = INVALID_INPUT      
             clearScreen()

@@ -10,10 +10,11 @@ def main():
     introductionPage()
     chapterContainer = loadChapterFile()
     clearScreen()
-    command = selectchapter(chapterContainer)
+    selectedChapter = selectChapter(chapterContainer)
     clearScreen()
-    if(command != 0):
-        sectionPage(chapterContainer[command-1])
+    if(selectedChapter != 0):
+        selectedSection = selectSection(chapterContainer[selectedChapter - 1 ])
+        print(selectedSection)
     else:
         pass
     os.system("pause")
@@ -40,8 +41,31 @@ def sectionPage(chapter):
     for sectionName,sectionNum in zip( chapter.sectionName,range(1,len(chapter.sectionName)+1) ):
         print("{0} - {1} ### {2}".format(chapter.chapterNum,sectionNum,sectionName))
 
+def selectSection(chapter):
+    state = None
+    EXCEED_MAXIMUM_NUMBER = 1
+    INVALID_INPUT = 2
+    while True:
+        try:
+            sectionPage(chapter)
+            print("\n\n")
+            if(state == EXCEED_MAXIMUM_NUMBER):
+                print("section number should not be greater than {0}".format(len(chapter.sectionName)))
+            elif state == INVALID_INPUT:
+                print("Oops! Please input a number")
+            selectedSection = int(input("Select section to enter( 0 for Back ):"))
+            if(selectedSection > len(chapter.sectionName)):
+                state = EXCEED_MAXIMUM_NUMBER
+                clearScreen()
+                continue
+            else:
+                return selectedSection
+        except ValueError:
+            state = INVALID_INPUT
+            clearScreen()
 
-def selectchapter(chapterContainer):
+
+def selectChapter(chapterContainer):
     state = None
     EXCEED_MAXIMUM_NUMBER = 1
     INVALID_INPUT = 2
@@ -53,13 +77,13 @@ def selectchapter(chapterContainer):
                 print("chapter number should not be greater than {0}".format(len(chapterContainer)))
             elif state == INVALID_INPUT:
                 print("Oops! Please input a number")
-            command = int(input("Select chapter to enter( 0 for Back ):"))
-            if command > len(chapterContainer):
+            selectedChapter = int(input("Select chapter to enter( 0 for Back ):"))
+            if selectedChapter > len(chapterContainer):
                 state = EXCEED_MAXIMUM_NUMBER
                 clearScreen()
                 continue
             else:
-                return command
+                return selectedChapter
         except ValueError:
             state = INVALID_INPUT      
             clearScreen()

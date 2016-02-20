@@ -6,6 +6,7 @@ def section1():
     section1.append('example:')
     section1.append('\ta = 1\n\tb = 3\n\tc = a + b')
     section1.append('The value store in c is 1 + 3 = 4')
+    return section1
     
 def section2():
     section2 = []
@@ -15,6 +16,7 @@ def section2():
     section2.append('The value store in c is 5 - 3 = 2')
     section2.append('\tx = 2\n\ty = 7\n\tz = x - y')
     section2.append('The value store in z is 2 - 7 = -5')
+    return section2
     
 def section3():
     section3 = []
@@ -24,6 +26,7 @@ def section3():
     section3.append('The value store in c is 4 * 3 = 12')
     section3.append('\tx = 2\n\ty = 7.1\n\tz = x * y')
     section3.append('The value store in z is 2 * 7.1 = 14.2')
+    return section3
     
 def section4():
     section4 = []
@@ -33,6 +36,7 @@ def section4():
     section4.append('The value store in c is 10 / 2 = 5')
     section4.append('\tx = 3\n\ty = 4\n\tz = x / y')
     section4.append('The value store in z is 3 / 4 = 0.75')
+    return section4
     
 def section5():
     section5 = []
@@ -42,6 +46,7 @@ def section5():
     section5.append('The value store in c is 10 % 2 = 0')
     section5.append('\tx = 13\n\ty = 7\n\tz = x % y')
     section5.append('The value store in z is 13 % 7 = 6')
+    return section5
     
 def section6():
     section6 = []
@@ -51,6 +56,7 @@ def section6():
     section6.append('The value store in c is 10 ** 2 = 100')
     section6.append('\tx = 2\n\ty = 8\n\tz = 512 / x ** y')
     section6.append('The value store in z is 512 / (2 ** 8) = 512 / 256 = 2')
+    return section6
     
 def section7():
     section7 = []
@@ -60,6 +66,7 @@ def section7():
     section7.append('The value store in c is 13 // 3 = 4')
     section7.append('\tx = 2\n\ty = 8\n\tz = x // y')
     section7.append('The value store in z is 2 // 8 = 0')
+    return section7
     
 def section8():
     section8 = []
@@ -72,6 +79,7 @@ def section8():
     section8.append('example:')
     section8.append('\ta = 13\n\tb = 7\n\ta += b')
     section8.append('The value store in a is 13 + 7 = 20 now')
+    return section8
     
 def initChapter2(fileName):
     chapter2 = []

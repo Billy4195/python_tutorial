@@ -10,7 +10,12 @@ def main():
     introductionPage()
     chapterContainer = loadChapterFile()
     clearScreen()
-    selectchapter(chapterContainer)
+    command = selectchapter(chapterContainer)
+    clearScreen()
+    if(command != 0):
+        sectionPage(chapterContainer[command-1])
+    else:
+        pass
     os.system("pause")
 
 def setcolor(color):
@@ -29,6 +34,12 @@ def chapterPage(chapterContainer):
     print("=============================chapter Page=============================")
     for chapter in chapterContainer:
         print("Chapter {0} ------ {1}".format(chapter.chapterNum,chapter.chapterName))
+
+def sectionPage(chapter):
+    print("Chapter {0} ------ {1}".format(chapter.chapterNum,chapter.chapterName))
+    for sectionName,sectionNum in zip( chapter.sectionName,range(1,len(chapter.sectionName)+1) ):
+        print("{0} - {1} ### {2}".format(chapter.chapterNum,sectionNum,sectionName))
+
 
 def selectchapter(chapterContainer):
     state = None

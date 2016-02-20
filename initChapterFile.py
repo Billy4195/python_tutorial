@@ -1,7 +1,7 @@
 #reset chapter File to clear all the record
 import json
 chapterContainer = []
-chapterContainer.append({'chapterNum':1,'chapterName':'Variables','sectionName':['Introduction','Int','Float','String']})
+chapterContainer.append({'chapterNum':1,'chapterName':'Variables','sectionName':['Introduction to Variables','Int','Float','String']})
 chapterContainer.append({'chapterNum':2,'chapterName':'Arithmetic and Assignment Operators','sectionName':['+','-','*','/','%','**','//','+= -= *= /= %= //=']})
 chapterContainer.append({'chapterNum':3,'chapterName':'Bitwise Operators','sectionName':['&','|','^','~','<<','>>']})
 chapterContainer.append({'chapterNum':4,'chapterName':'Relational and Logical Operators','sectionName':['> , <','>=','<=','==','!=','not','or','and']})

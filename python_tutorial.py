@@ -8,7 +8,7 @@ from loadChapterFile import loadChapterFile
 def main():
     setcolor("8F")
     introductionPage()
-    chapterContainer = loadChapterFile()
+    chapterContainer = loadChapterFile('chapters.txt')
     clearScreen()
     selectedChapter = selectChapter(chapterContainer)
     clearScreen()

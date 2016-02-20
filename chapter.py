@@ -3,4 +3,5 @@ class chapter:
         self.chapterName = jsonchapter['chapterName']
         self.chapterNum = jsonchapter['chapterNum']
         self.sectionName = jsonchapter['sectionName']
-    
+    def setSection():
+        pass

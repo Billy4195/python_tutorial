@@ -2,15 +2,15 @@
 
 import os
 import json
-from loadLevelFile import loadLevelFile
+from loadChapterFile import loadChapterFile
 #set foreground and background color
 #introdution page 
 def main():
     setcolor("8F")
     introductionPage()
-    levelContainer = loadLevelFile()
+    chapterContainer = loadChapterFile()
     clearScreen()
-    selectLevel(levelContainer)
+    selectchapter(chapterContainer)
     os.system("pause")
 
 def setcolor(color):
@@ -25,25 +25,25 @@ def introductionPage():
     print("Enjoy it!  ˊˇˋ\n")
     os.system("pause")
 
-def levelPage(levelContainer):
-    print("=============================Level Page=============================")
-    for level in levelContainer:
-        print("Level {0} ------ {1}".format(level.levelNum,level.levelName))
+def chapterPage(chapterContainer):
+    print("=============================chapter Page=============================")
+    for chapter in chapterContainer:
+        print("Chapter {0} ------ {1}".format(chapter.chapterNum,chapter.chapterName))
 
-def selectLevel(levelContainer):
+def selectchapter(chapterContainer):
     state = None
     EXCEED_MAXIMUM_NUMBER = 1
     INVALID_INPUT = 2
     while True:
         try:
-            levelPage(levelContainer)
+            chapterPage(chapterContainer)
             print("\n\n")
             if(state == EXCEED_MAXIMUM_NUMBER):
-                print("Level number should not be greater than {0}".format(len(levelContainer)))
+                print("chapter number should not be greater than {0}".format(len(chapterContainer)))
             elif state == INVALID_INPUT:
                 print("Oops! Please input a number")
-            command = int(input("Select Level to enter( 0 for Back ):"))
-            if command > len(levelContainer):
+            command = int(input("Select chapter to enter( 0 for Back ):"))
+            if command > len(chapterContainer):
                 state = EXCEED_MAXIMUM_NUMBER
                 clearScreen()
                 continue

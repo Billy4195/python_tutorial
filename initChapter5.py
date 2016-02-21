@@ -34,7 +34,8 @@ def initChapter5(fileName):
     chapter5.append(section1())
     chapter5.append(section2())
     try:
-        with open(fileName,'w') as chapter5File:
-            chapter5File.write(json.dumps(chapter5))
+        with open(fileName,'a') as chapterFile:
+            chapterFile.write(json.dumps(chapter5))
+            chapterFile.write('\n')
     except IOError:
         print(fileName+' open failed')

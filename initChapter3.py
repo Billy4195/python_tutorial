@@ -60,7 +60,7 @@ def section6():
     section6.append('9 can be written in binary  0000 1001')
     section6.append('9 >> 1 is written in binary 0000 0100')
     section6.append('The value store in b is 9 >> 1 = 4')
-    section6
+    return section6
     
 def initChapter3(fileName):
     chapter3 = []

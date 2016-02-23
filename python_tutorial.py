@@ -15,6 +15,7 @@ def main():
     if(selectedChapter != 0):
         selectedSection = selectSection(chapterContainer[selectedChapter - 1 ])
         print(selectedSection)
+        chapterContainer[selectedChapter].sections[selectedSection].play()
     else:
         pass
     os.system("pause")
